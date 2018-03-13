@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0\c70196;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\sa210\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Warning: this is a large data set.\'a0The decompressed files require about 22GB of space.\
+This data captures the process of offering incentives (a.k.a. coupons) to a large number of customers and forecasting\'a0those who will become loyal to the product. Let's say\'a0100 customers\'a0are\'a0offered a discount to purchase two\'a0bottles of water.\'a0Of the 100 customers, 60 choose to redeem the offer. These 60 customers are the focus of this competition. You are asked to predict which of the\'a060 will return (during or after the promotional period) to purchase the same item again.\
+To create this prediction, you are given a minimum of a year of shopping history prior to each customer's incentive, as well as the purchase histories of many other shoppers (some of whom will have received the same offer). The transaction history contains all items purchased, not just\'a0items related to\'a0the offer. Only one offer per customer is included in the data. The training set is comprised of offers issued before 2013-05-01. The test set is offers issued on or after\'a02013-05-01.\
+\pard\pardeftab720\sl460\sa320\partightenfactor0
+
+\fs40 \cf4 \strokec4 Files\
+\pard\pardeftab720\sl320\sa210\partightenfactor0
+
+\fs28 \cf2 \strokec2 You are provided four\'a0relational files:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\sa80\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 transactions.csv\'a0- contains transaction history for all customers for a period of at least 1 year prior to their offered incentive\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 trainHistory.csv\'a0- contains the incentive offered to each customer and information about\'a0the behavioral response to the offer\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 testHistory.csv\'a0- contains the incentive offered to each customer but does not include their response (you are predicting the repeater column for each id in this file)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 offers.csv\'a0- contains information about the offers\cb1 \
+\pard\pardeftab720\sl460\sa320\partightenfactor0
+
+\fs40 \cf4 \cb3 \strokec4 Fields\
+\pard\pardeftab720\sl320\sa210\partightenfactor0
+
+\fs28 \cf2 \strokec2 All of the fields are anonymized and categorized\'a0to protect\'a0customer\'a0and sales\'a0information. The specific meanings of the fields will not be provided (so don't bother asking). Part of the challenge of this competition is learning the taxonomy of items in a data-driven way.\
+\pard\pardeftab720\sl320\sa210\partightenfactor0
+
+\i \cf2 history
+\i0 \cb1 \uc0\u8232 \cb3 id\'a0- A unique id representing a customer\cb1 \uc0\u8232 \cb3 chain\'a0- An integer representing a store chain\cb1 \uc0\u8232 \cb3 offer\'a0- An id representing a certain offer\cb1 \uc0\u8232 \cb3 market\'a0- An id representing a geographical region\cb1 \uc0\u8232 \cb3 repeattrips\'a0- The number of times the customer made a repeat purchase\cb1 \uc0\u8232 \cb3 repeater\'a0- A boolean, equal to repeattrips > 0\cb1 \uc0\u8232 \cb3 offerdate\'a0- The date a customer received the offer\
+
+\i transactions\cb1 \uc0\u8232 
+\i0 \cb3 id\'a0- see above\cb1 \uc0\u8232 \cb3 chain\'a0- see above\cb1 \uc0\u8232 \cb3 dept\'a0- An aggregate grouping of the Category (e.g. water)\cb1 \uc0\u8232 \cb3 category\'a0- The product category (e.g. sparkling water)\cb1 \uc0\u8232 \cb3 company\'a0- An id of the company\'a0that sells the item\cb1 \uc0\u8232 \cb3 brand\'a0- An id of the brand to which the item belongs\cb1 \uc0\u8232 \cb3 date\'a0- The date of purchase\cb1 \uc0\u8232 \cb3 productsize\'a0- The amount of the product purchase (e.g. 16 oz of water)\cb1 \uc0\u8232 \cb3 productmeasure\'a0- The units of the product purchase (e.g. ounces)\cb1 \uc0\u8232 \cb3 purchasequantity\'a0- The number of units purchased\cb1 \uc0\u8232 \cb3 purchaseamount\'a0- The dollar amount of the purchase\
+
+\i offers\cb1 \uc0\u8232 
+\i0 \cb3 offer\'a0- see above\cb1 \uc0\u8232 \cb3 category\'a0- see above\cb1 \uc0\u8232 \cb3 quantity\'a0- The number of units\'a0one must purchase to get the discount\cb1 \uc0\u8232 \cb3 company\'a0- see above\cb1 \uc0\u8232 \cb3 offervalue\'a0- The dollar value of the offer\cb1 \uc0\u8232 \cb3 brand\'a0- see above\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 The transactions file can be joined to the history\'a0file by (id,chain). The history\'a0file can be joined to the offers file by (offer). The transactions file can be joined to the offers file by (category, brand, company). A negative value in productquantity and\'a0purchaseamount indicates a return.\
+}
